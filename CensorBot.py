@@ -8,7 +8,9 @@ print("Loading Discord Client...")
 
 print("Loading Bot Info...")
 TOKEN = "";#Put your bot's token here
-client = discord.Client()
+intents = discord.Intents.default()
+intents.message_content = True
+client = discord.Client(intents=intents)
 guilds = []
 print("Loaded Bot Info!")
 
