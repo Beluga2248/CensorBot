@@ -1,3 +1,5 @@
+from dotenv import load_dotenv
+import os
 import discord
 import json
 import re
@@ -7,7 +9,7 @@ print(f"Discord.py Version: {discord.__version__}")
 print("Loading Discord Client...")
 
 print("Loading Bot Info...")
-TOKEN = "";#Put your bot's token here
+#Put your bot's token here
 intents = discord.Intents.default()
 intents.message_content = True
 client = discord.Client(intents=intents)
@@ -115,4 +117,5 @@ async def on_message(message):
     else:
         print("There was a request send from a channel that we could not access")
             
-client.run(TOKEN)
+load_dotenv()
+TOKEN = os.getenv("TOKEN")
